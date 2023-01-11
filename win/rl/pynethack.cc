@@ -768,6 +768,7 @@ PYBIND11_MODULE(_pynethack, m)
 
     mn.def("OBJ_NAME", [](const objclass &obj) { return OBJ_NAME(obj); });
     mn.def("OBJ_DESCR", [](const objclass &obj) { return OBJ_DESCR(obj); });
+    mn.def("OBJ_OCLASS", [](const objclass &obj) { return objects[obj.oc_name_idx].oc_class; });
 
     py::class_<objdescr>(mn, "objdescr")
         .def_static(
